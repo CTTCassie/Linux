@@ -91,7 +91,7 @@ void *product_run(void *arg)  //生产者往链表中头插数据
 	node_p h=(node_p)arg;
 	while(1)
 	{
-		usleep(100000);
+		usleep(1000000);
 		data=rand()%1000;
 		pthread_mutex_lock(&mylock);   //加锁
 		pushHead(h,data);
