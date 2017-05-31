@@ -17,7 +17,7 @@ set<string> circle_friend;
 udp_client *_client=NULL;
 
 
-void* header_run(void* arg)
+void* header_run(void* arg)   //实现类似循环滚动的效果
 {	
 	int y,x;
 	std::string msg="Welcome to chat_sys!";
@@ -44,7 +44,7 @@ void* header_run(void* arg)
 }
 
 
-void* output_run(void* arg)
+void* output_run(void* arg)   //当output满的时候可自动刷新，重新接受新的数据
 {
 	udp_client *client=(udp_client*)arg;
 	int step=1;
@@ -140,16 +140,14 @@ void* input_run(void* arg)
 		win.putStrToWin(win.input,1,1,point);
 		win.myWinRefresh(win.input);
 	
-		std::string msg=win.getWinStr(win.input);     //获取窗口数据
+		std::string msg=win.getWinStr(win.input);//获取窗口数据
 		senddata.msg=msg;
 		
-		senddata.val_to_str(msg);        //序列化
+		senddata.val_to_str(msg);//序列化
 	    client->sendData(msg);	
 	}
 	return NULL;
 }
-
-
 
 void  hander(int sig)
 {
