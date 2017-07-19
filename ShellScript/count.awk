@@ -1,0 +1,25 @@
+#!/bin/awk -f
+BEGIN{
+	notice=0;
+	warning=0;
+	error=0;
+	fatal=0;
+}
+/notice/{
+	notice++;
+}
+/warning/{
+	warning++;
+}
+/error/{
+	error++;
+}
+/fatal/{
+	fatal++;
+}
+END{
+	printf("notice=%d\n",notice);
+	printf("warning=%d\n",warning);
+	printf("error=%d\n",error);
+	printf("fatal=%d\n",fatal);
+}
