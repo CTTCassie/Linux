@@ -1,0 +1,5 @@
+g++ -o cgi_insert cgi_insert.cpp sql_api.cpp -I/home/ctt/Item/http_server/sql_connection/../lib/include -L/home/ctt/Item/http_server/sql_connection/../lib/lib -lmysqlclient -lpthread
+/usr/bin/ld:/home/ctt/Item/http_server/sql_connection/../lib/lib/libmysqlclient.so: file format not recognized; treating as linker script
+/usr/bin/ld:/home/ctt/Item/http_server/sql_connection/../lib/lib/libmysqlclient.so:1: syntax error
+collect2: ld returned 1 exit status
+make: *** [cgi_insert] Error 1
