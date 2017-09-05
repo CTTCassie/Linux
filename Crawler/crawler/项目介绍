@@ -1,0 +1,8 @@
+爬取西安工业大学就业网上的招聘信息
+项目的主逻辑：
+1、获取到西安工业大学就业信息网主页http://.job.xatu.edu.cn/jyxx.asp的html；
+2、解析这个html，拿到该html主页中所有的详情页的url列表；
+3、遍历这个url列表
+4、分别获取每个详情页的detail_html
+5、解析每个详情页detail_html的标题
+6、将解析到的详情页的标题和详情页的html存储在磁盘文件detail中
